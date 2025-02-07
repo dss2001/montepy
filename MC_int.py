@@ -2,7 +2,7 @@
 Filename: MC_int.py
 Author: Daniel Santos Stone
 Date: 31-10-2024
-Description: Monte Carlo integrator for 1D functions
+Description: Monte Carlo integrator for N-D functions
 Contact: daniel.santos-stone@etu.univ-amu.fr 
 Dependencies: seaborn, matplotlib, numpy
 
@@ -15,7 +15,6 @@ import seaborn as sns
 from inspect import signature
 from warnings import warn
 from math import prod
-#from tqdm import tqdm
 
 #Monte Carlo with naive uniform sampler 
 
@@ -29,7 +28,7 @@ class MC_int():
 
     def __init__(self,N,M,func,lower,upper,scaling=1):
         """
-        Class for numerically integrating 1D functions via Monte Carlo, with a naive uniform sampler.
+        Class for numerically integrating N-D functions via Monte Carlo, with a naive uniform sampler.
         
         N: number of points to be generated for each replicate
         M: number of replicates to generate for Central Limit Theorem estimation
@@ -123,4 +122,5 @@ if __name__ == "__main__":
     #mc.plot_averages(save_name="test.png",x_label="Energies",bin_size=20)
 
     #area should be in the 40s; need to check the sampled points as well as if there is somethign else wrong
+    #parallelize with multiproc?
 
